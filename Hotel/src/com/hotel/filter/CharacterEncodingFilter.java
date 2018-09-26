@@ -29,7 +29,7 @@ public class CharacterEncodingFilter implements Filter {
 	 * @see Filter#destroy()
 	 */
 	public void destroy() {
-		System.out.println("gameover");
+		System.out.println("1111");
 	}
 
 	/**

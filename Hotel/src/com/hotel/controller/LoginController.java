@@ -106,6 +106,7 @@ public class LoginController extends HttpServlet {
 				// 写Session
 				HttpSession session = request.getSession();
 				session.setAttribute("login", inputName);
+				session.setMaxInactiveInterval(5*60);
 				// 写Cookie
 				if (remember != null && remember.equals("1")) {
 					Cookie cookieName = new Cookie("name", inputName);
@@ -116,7 +117,7 @@ public class LoginController extends HttpServlet {
 					response.addCookie(cookiePassword);
 				}
 				// 成功跳转
-				response.sendRedirect("WEB-INF/main.html");
+				request.getRequestDispatcher("WEB-INF/main.html").forward(request, response);
 			} else {
 				// 失败跳转
 				request.setAttribute("err", "用户名或密码错误");

@@ -3,14 +3,11 @@
   <display-name>Hotel</display-name>
   <welcome-file-list>
     <welcome-file>loginaction.do</welcome-file>
-   
   </welcome-file-list>
-  <!-- 配置登录过滤器 -->
   <filter>
     <filter-name>loginCheck</filter-name>
     <filter-class>com.hotel.filter.LoginCheckFilter</filter-class>
   </filter>
-  <!-- 配置POST中文过滤过滤器 -->
   <filter>
     <filter-name>characterEnconding</filter-name>
     <filter-class>com.hotel.filter.CharacterEncodingFilter</filter-class>
@@ -19,7 +16,6 @@
       <param-value>UTF-8</param-value>
     </init-param>
   </filter>
-  <!-- 配置过滤链 -->
   <filter-mapping>
     <filter-name>loginCheck</filter-name>
     <url-pattern>/action/*</url-pattern>

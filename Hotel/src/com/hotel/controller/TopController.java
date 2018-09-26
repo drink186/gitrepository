@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class LeftController
+ * Servlet implementation class TopController
  */
-@WebServlet("/action/leftaction.do")
-public class LeftController extends HttpServlet {
+@WebServlet("/action/topaction.do")
+public class TopController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LeftController() {
+    public TopController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,7 +26,7 @@ public class LeftController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("../WEB-INF/left.jsp").forward(request, response);
+		request.getRequestDispatcher("../WEB-INF/top.html").forward(request, response);
 	}
 
 	/**

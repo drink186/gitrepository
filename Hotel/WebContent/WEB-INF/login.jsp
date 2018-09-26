@@ -15,7 +15,7 @@
 		</div>
 		<div class="panel-body">
 			<form class="form-horizontal" role="form" method="post"
-				action="loginaction.do?opt=login">
+				action="">
 				<div class="form-group">
 					<h4 style="color:red">${err}</h4>
 				</div>

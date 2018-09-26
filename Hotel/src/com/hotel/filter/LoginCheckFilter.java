@@ -15,15 +15,15 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class LoginCheckFilter
  */
-//@WebFilter("/LoginCheckFilter")
+// @WebFilter("/LoginCheckFilter")
 public class LoginCheckFilter implements Filter {
 
-    /**
-     * Default constructor. 
-     */
-    public LoginCheckFilter() {
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * Default constructor.
+	 */
+	public LoginCheckFilter() {
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see Filter#destroy()
@@ -35,12 +35,14 @@ public class LoginCheckFilter implements Filter {
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		HttpSession session=((HttpServletRequest)request).getSession();
-		if(session.getAttribute("login")!=null) {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+		HttpSession session = ((HttpServletRequest) request).getSession();
+		if (session.getAttribute("login") != null) {
 			chain.doFilter(request, response);
+		} else {
+			((HttpServletResponse) response).sendRedirect("../");
 		}
-		((HttpServletResponse)response).sendRedirect("../loginaction.do");
 		
 	}
 
